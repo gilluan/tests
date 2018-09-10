@@ -8,6 +8,8 @@ export function create(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     console.log('_options', _options);
  //   tree.create('test.txt', 'Hello World!');
+
+ 
     return tree;
   };
 }
