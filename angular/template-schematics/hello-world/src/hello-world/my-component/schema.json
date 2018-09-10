@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchematicsMyComponent",
+    "title": "Testing schematics",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "O nome do componente.",
+        "type": "string",
+        "$default": {
+          "$source": "argv",
+          "index": 0
+        }
+      }
+    },
+    "required": []
+  }

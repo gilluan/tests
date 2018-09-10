@@ -3,10 +3,10 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function generatorBlank(_options: any): Rule {
+export function create(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
-    _context.logger.debug('Debug example');
-    tree.create(_options.name || 'hello', 'world');
+    console.log('_options', _options);
+ //   tree.create('test.txt', 'Hello World!');
     return tree;
   };
 }
