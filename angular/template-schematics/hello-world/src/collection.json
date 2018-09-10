@@ -8,6 +8,10 @@
     "my-componente": {
       "description": "Create a new componente.",
       "factory": "./hello-world/my-component/index#create"
+    },
+    "many-schematics": {
+      "description": "Calling another schematic.",
+      "factory": "./hello-world/many-schematics/index#create"
     }
   }
 }
