@@ -9,9 +9,9 @@ export function create(_options: any): Rule {
     console.log('_options', _options);
 
     const templateSrc = apply(url('./files'), [
-        template({
-            
-        })
+        //template({
+
+        //})
     ]);
  //   tree.create('test.txt', 'Hello World!');
     return tree;
