@@ -28,6 +28,12 @@
       ],
       "lib2/*": [
         "dist/lib2/*"
+      ],
+      "@gilluan/lib3": [
+        "dist/gilluan/lib3"
+      ],
+      "@gilluan/lib3/*": [
+        "dist/gilluan/lib3/*"
       ]
     }
   }
