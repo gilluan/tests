@@ -15,7 +15,6 @@ export const debug = (reducer: ActionReducer<any>): ActionReducer<any> => (state
   return reducer(state, action);
 };
 
-
 // Similar aos middlewares usados no redux
 export const metaReducers: MetaReducer<any>[] = [debug];
 
@@ -27,11 +26,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     BrowserModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
-      initialState: {
-        counterReducer: {
-          counter: 2
-        }
-      }
+      initialState: {}
     })
   ],
   providers: [],
