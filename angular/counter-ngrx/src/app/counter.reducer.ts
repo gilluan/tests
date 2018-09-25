@@ -4,16 +4,22 @@ import { Action } from '@ngrx/store';
 import { IfStmt } from '@angular/compiler';
 import { CounterActionsUnion, CounterActionTypes } from './counter.actions';
 
-const initialState = 0;
+export interface CounterState {
+    counter: number;
+}
 
-export function counterReducer(state: number = initialState, action: CounterActionsUnion) {
+const initialState: CounterState = {
+    counter: 3
+};
+
+export function counterReducer(state: CounterState = initialState, action: CounterActionsUnion): CounterState {
     switch (action.type) {
         case CounterActionTypes.INCREMENT:
-            return state + 1;
+            return { counter: state.counter + 1 };
         case CounterActionTypes.DECREMENT:
-            return state - 1;
+            return { counter: state.counter - 1 };
         case CounterActionTypes.RESET:
-            return action.payload;
+            return { counter: action.payload };
         default:
             return state;
     }

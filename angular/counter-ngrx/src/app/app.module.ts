@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-
 import { AppComponent } from './app.component';
-import { counterReducer } from './counter.reducer';
+import { reducers } from './reducers';
+import { CounterState } from './counter.reducer';
+
+export interface StateApp {
+    counterReducer: CounterState;
+}
 
 @NgModule({
   declarations: [
@@ -11,7 +15,13 @@ import { counterReducer } from './counter.reducer';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ count: counterReducer })
+    StoreModule.forRoot(reducers, {
+      initialState: {
+        counterReducer: {
+          counter: 2
+        }
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
