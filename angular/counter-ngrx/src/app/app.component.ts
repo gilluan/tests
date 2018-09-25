@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from './counter';
+import * as CounterActions from './counter.actions';
 
 interface AppState {
   count: number;
@@ -24,15 +24,15 @@ export class AppComponent {
   }
 
   increment() {
-    this.store.dispatch({ type: INCREMENT });
+    this.store.dispatch(new CounterActions.Increment());
   }
 
   decrement() {
-    this.store.dispatch({ type: DECREMENT });
+    this.store.dispatch(new CounterActions.Decrement());
   }
 
   reset() {
-    this.store.dispatch({ type: RESET });
+    this.store.dispatch(new CounterActions.Reset(2));
   }
 
 }
