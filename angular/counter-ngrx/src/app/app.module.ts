@@ -9,14 +9,14 @@ export interface StateApp {
     counterReducer: CounterState;
 }
 
-export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
-  return function(state, action) {
-    console.log('state', state);
-    console.log('action', action);
-    return reducer(state, action);
-  };
-}
+export const debug = (reducer: ActionReducer<any>): ActionReducer<any> => (state, action) => {
+  console.log('state', state);
+  console.log('action', action);
+  return reducer(state, action);
+};
 
+
+// Similar aos middlewares usados no redux
 export const metaReducers: MetaReducer<any>[] = [debug];
 
 @NgModule({
