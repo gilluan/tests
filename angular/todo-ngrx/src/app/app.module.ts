@@ -14,6 +14,9 @@ import { TodoEffects } from './todo/todo.effects';
 import { AddTodoComponent } from './todo/containers/add-todo/add-todo.component';
 import { TodoListComponent } from './todo/containers/todo-list/todo-list.component';
 import { TodoFilterComponent } from './todo/containers/todo-filter/todo-filter.component';
+import { AddTodoFormComponent } from './todo/components/add-todo-form/add-todo-form.component';
+import { LinkComponent } from './todo/components/link/link.component';
+import { TodoItemComponent } from './todo/components/todo-item/todo-item.component';
 
 
 
@@ -25,6 +28,9 @@ import { TodoFilterComponent } from './todo/containers/todo-filter/todo-filter.c
     AddTodoComponent,
     TodoListComponent,
     TodoFilterComponent,
+    AddTodoFormComponent,
+    LinkComponent,
+    TodoItemComponent,
   ],
   imports: [
     BrowserModule,
