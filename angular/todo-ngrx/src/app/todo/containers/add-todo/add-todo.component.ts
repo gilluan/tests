@@ -13,4 +13,9 @@ export class AddTodoComponent implements OnInit {
   ngOnInit() {
   }
 
+  addTodoItem(todoText: string) {
+    // TODO: dispatch to store
+    // store.dispatch()
+  }
+
 }

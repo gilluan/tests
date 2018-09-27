@@ -36,4 +36,12 @@ ng generate @ngrx/schematics:effect App --root --module app.module.ts
 ng generate feature Todo -m app.module.ts --flat false
 
 ## Step 9 - Generate container components
-ng generate container AddTodo --state reducers/index.ts --stateInterface TodoState
+ng generate container todo/containers/AddTodo
+ng generate container todo/containers/TodoList
+ng generate container todo/containers/TodoFilter
+
+## Step 10 - Generate presentation components
+ng g c todo/components/addTodoForm
+ng g c todo/components/todoList
+ng g c todo/components/link
+ng g c todo/components/todoItem
