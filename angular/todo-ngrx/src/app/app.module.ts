@@ -9,12 +9,22 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
-import * as fromTodo from './todo.reducer';
-import { TodoEffects } from './todo.effects';
+import * as fromTodo from './todo/todo.reducer';
+import { TodoEffects } from './todo/todo.effects';
+import { AddTodoComponent } from './todo/containers/add-todo/add-todo.component';
+import { TodoListComponent } from './todo/containers/todo-list/todo-list.component';
+import { TodoFilterComponent } from './todo/containers/todo-filter/todo-filter.component';
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddTodoComponent,
+    TodoListComponent,
+    TodoFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +33,7 @@ import { TodoEffects } from './todo.effects';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
     StoreModule.forFeature('todo', fromTodo.reducer),
-    EffectsModule.forFeature([TodoEffects])
+    EffectsModule.forFeature([TodoEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,5 +33,7 @@ ng generate @ngrx/schematics:store State --root --module app.module.ts
 ng generate @ngrx/schematics:effect App --root --module app.module.ts
 
 ## Step 8 - Generate a new feature
-ng generate feature Todo -m app.module.ts
+ng generate feature Todo -m app.module.ts --flat false
 
+## Step 9 - Generate container components
+ng generate container AddTodo --state reducers/index.ts --stateInterface TodoState
