@@ -17,17 +17,21 @@ npm install @ngrx/entity --save
 ng config cli.defaultCollection @ngrx/schematics
 
 ## Step 5 - Configure  @ngrx/schematics as a default schematics in angular.json
+
+```javascript
 "schematics": {
     "@ngrx/schematics:component": {
         "styleext": "scss"
     }
 }
-
+```
 
 ## Step 6 - Initial State Setup
 ng generate @ngrx/schematics:store State --root --module app.module.ts
 
+## Step 7 - Initial Effects Setup
+ng generate @ngrx/schematics:effect App --root --module app.module.ts
 
-
-
+## Step 8 - Generate a new feature
+ng generate feature Todo -m app.module.ts
 
