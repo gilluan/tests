@@ -1,6 +1,7 @@
 <!--- Tools --->
 vscode
 npm
+chrome devtools
 
 
 <!--- Para criar a aplicação --->
@@ -15,6 +16,7 @@ npm
 <!--- Para implementar a funcionalidade --->
 * ng g module todo --routing
 * ng g store heroes/Heroes -m heroes.module.ts
+* ng g action todo/Todo --group 
 * ng g feature todo/Todo --reducers=../reducers/index.ts --group
 * Na pasta todo/reducers criar o arquivo: index.ts
 * ng g container todo/containers/FormTodoPage 
