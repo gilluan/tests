@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class TodoListComponent {
   
-  @Input() todos: Observable<any[]>;
+  @Input() todos: string[];
 
   constructor() { }
 

@@ -7,38 +7,25 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import { TodoActions, TodoActionTypes } from '../todo/actions/todo.actions';
+import * as fromTodoReducer from '../todo/todo.reducer';
 
 type AuthState = {
   loggedIn: boolean,
   user: any //Change to User Model
 }
 
-type TodoState = {
-  todos?: string[]
-}
+
 
 export interface AppState {
   auth: AuthState;
-  todo: TodoState;
+  todo: fromTodoReducer.TodoState;
 
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   //need replace this
   auth: () => ({loggedIn: false , user: {}}),
-  todo: (state: TodoState = {todos: []}, action: any): TodoState => {
-    console.log('sdf',action);
-    switch(action.type) {
-      case TodoActionTypes.AddTodo: 
-        return {
-          ...state,
-          todos: [...state.todos, action.payload]
-        }
-      default: 
-        return state;
-
-    }
-  }
+  todo: fromTodoReducer.reducer
 };
 
 

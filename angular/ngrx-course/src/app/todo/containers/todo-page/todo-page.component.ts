@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from '../../../reducers';
 import { AddTodos } from '../../actions/todo.actions';
 import { Observable } from 'rxjs';
-
+import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
+import {map } from 'rxjs/operators'
+import { TodoState } from '../../todo.reducer';
+import { selectAllTodos } from '../../todo.selectors';
 @Component({
   selector: 'app-todo-page',
   templateUrl: './todo-page.component.html',
@@ -11,11 +14,14 @@ import { Observable } from 'rxjs';
 })
 export class TodoPageComponent implements OnInit {
 
-  todos$: Observable<any[]>;
+  todos$: Observable<any>;
 
   constructor(private store: Store<AppState>) { 
    // this.store.dispatch();
-   
+   this.todos$ = this.store
+   .pipe(
+     select(selectAllTodos)
+   )
   }
 
   ngOnInit() {
