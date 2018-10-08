@@ -16,9 +16,12 @@ chrome devtools
 <!--- Para implementar a funcionalidade --->
 * ng g module todo --routing
 * ng g store heroes/Heroes -m heroes.module.ts
+//this or
 * ng g action todo/Todo --group 
+* ng g reducer Todo --flat=false --module todo/todo.module.ts
+//that
 * ng g feature todo/Todo --reducers=../reducers/index.ts --group
-* Na pasta todo/reducers criar o arquivo: index.ts
+
 * ng g container todo/containers/FormTodoPage 
 * ng g c todo/components/FormTodo -m todo/todo.module.ts
 * ng g c todo/components/ListTodo -m todo/todo.module.ts
